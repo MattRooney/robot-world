@@ -1,0 +1,18 @@
+---
+robots:
+- id: 1
+  name: Jimmy James
+  city: Brooklyn
+  state: NY
+  birthday: Sept 20
+  date hired: Dec 1
+  department: Transportation
+  hired: ''
+- id: 4
+  name: Matt
+  city: Denver
+  state: CO
+  birthday: May 13
+  hired: Aug 1
+  department: Party Hard
+total: 4

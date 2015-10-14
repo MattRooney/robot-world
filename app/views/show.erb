@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-6 col-md-offset-3 well well-sm text-center">
+      <a href="/robots">Back to Robot Index</a>
+
+      <h2><%= @robot.name.capitalize %></h1>
+      <img src="https://robohash.org/<%= @robot.name.capitalize %>.png">
+      <p><%= @robot.city.capitalize %>, <%= @robot.state.upcase %></p>
+      <p><%= @robot.birthday.capitalize %></p>
+      <p><%= @robot.hired %></p>
+      <p><%= @robot.department.capitalize %></p>
+    </div>
+  </div>
+</div>
