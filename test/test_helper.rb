@@ -9,3 +9,9 @@ class Minitest::Test
     RobotWorld.delete_all
   end
 end
+
+Capybara.app = TaskManagerApp
+
+class FeatureTest < Minitest::Test
+  include Capybara::DSL
+end
