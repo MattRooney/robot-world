@@ -10,8 +10,8 @@ class Minitest::Test
   end
 end
 
-Capybara.app = TaskManagerApp
-
-class FeatureTest < Minitest::Test
-  include Capybara::DSL
-end
+# Capybara.app = TaskManagerApp
+#
+# class FeatureTest < Minitest::Test
+#   include Capybara::DSL
+# end

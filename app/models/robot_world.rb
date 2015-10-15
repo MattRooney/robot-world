@@ -4,7 +4,7 @@ class RobotWorld
   def self.database
     if ENV["RACK_ENV"] == 'test'
       @database ||= YAML::Store.new("db/robot_world_test")
-    else   
+    else
       @database ||= YAML::Store.new("db/robot_world")
     end
   end
@@ -56,7 +56,7 @@ class RobotWorld
 
   def self.delete_all
     database.transaction do
-      database['tasks'] = []
+      database['robots'] = []
       database['total'] = 0
     end
   end
