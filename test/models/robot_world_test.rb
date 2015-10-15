@@ -20,22 +20,41 @@ class RobotWorldTest < Minitest::Test
   end
 
   def create_robots(num)
-    num.times do |i|
-      i = 1
-      RobotWorld.create ({ :name => "Name #{i}",
-                          :city => "City #{i}",
-                          :state => "State #{i}",
-                          :birthday => "B-day #{i}",
-                          :hired => "hired #{i}",
-                          :department => "department #{i}"})
-      i += 1
+    num.times do |id|
+      id += 1
+      RobotWorld.create ({:name => "Name #{id}",
+                          :city => "City #{id}",
+                          :state => "State #{id}",
+                          :birthday => "B-day #{id}",
+                          :hired => "hired #{id}",
+                          :department => "department #{id}"})
       end
     end
 
-    def test_two_robots_are_created
-      create_robots(2)
+    def test_five_robots_are_created
+      create_robots(5)
 
-      assert_equal 2, RobotWorld.all.count
+      assert_equal 5, RobotWorld.all.count
+    end
+
+    def test_three_robots_have_unique_names
+      create_robots(3)
+
+      assert_equal ["Name 1", "Name 2", "Name 3"], RobotWorld.all.map { |robot| robot.name }
+    end
+
+    def test_three_robots_have_unique_states
+      create_robots(3)
+
+      assert_equal ["State 1", "State 2", "State 3"], RobotWorld.all.map { |robot| robot.state }
+    end
+
+    def test_it_finds_by_id
+      create_robots(5)
+      robot_3 = RobotWorld.find(3)
+
+      assert_equal 3, robot_3.id
+      assert_equal "Name 3", robot_3.name
     end
 
 end
