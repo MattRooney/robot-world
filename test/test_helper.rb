@@ -12,7 +12,7 @@ class Minitest::Test
   end
 end
 
-Capybara.app = TaskManagerApp
+Capybara.app = RobotWorldApp
 
 class FeatureTest < Minitest::Test
   include Capybara::DSL
