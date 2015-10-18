@@ -1,7 +1,7 @@
-require 'rake/testtask'
+require 'rake/testrobot'
 require 'bundler'
 Bundler.require
 
-task :test do
+robot :test do
   Dir.glob('./test/**/*_test.rb') { |file| require file }
 end
