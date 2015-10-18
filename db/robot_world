@@ -15,4 +15,18 @@ robots:
   birthday: May 13
   hired: Aug 1
   department: Party Hard
-total: 4
+- id: 5
+  name: ''
+  city: ''
+  state: ''
+  birthday: ''
+  hired: ''
+  department: ''
+- id: 6
+  name: Jasmine
+  city: Rome
+  state: NY
+  birthday: '1112'
+  hired: yesterday
+  department: testing
+total: 6
