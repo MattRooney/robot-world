@@ -28,7 +28,7 @@ class NewTest < FeatureTest
 
     assert_equal '/robots/new', current_path
     fill_in('Name:', :with => 'Juan')
-    find_button('Submit').click 
+    find_button('Submit').click
 
     assert_equal '/robots', current_path
   end
