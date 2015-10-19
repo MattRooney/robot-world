@@ -6,11 +6,18 @@ require 'minitest/pride'
 require 'capybara'
 require 'tilt/erb'
 
+DatabaseCleaner[:sequel, {:connection => Sequel.sqlite("db/robot_world_test.sqlite3")}].strategy = :truncation
+
 class Minitest::Test
+  def setup
+    DatabaseCleaner.start
+  end
+
   def teardown
-    RobotWorld.delete_all
+    DatabaseCleaner.clean
   end
 end
+
 
 Capybara.app = RobotWorldApp
 
