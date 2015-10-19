@@ -31,9 +31,11 @@ class NewTest < FeatureTest
     find_button('Submit').click
 
     assert_equal '/robots', current_path
-    within(".container") do
-      assert page.has_content?("Welcome to Robot World: A World of Robots")
-    end
+    click_link('Juan')
+    
+    # within(".container") do
+    #   assert page.has_content?("Welcome to Robot World: A World of Robots")
+    # end
   end
 
 end
