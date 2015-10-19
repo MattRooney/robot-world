@@ -19,7 +19,7 @@ class NewTest < FeatureTest
     visit '/robots'
     click_link "Name 1"
 
-    assert_equal "/robots/1", current_path
+    assert_equal "/robots/#{RobotWorld.all.first.id}", current_path
   end
 
   def test_user_can_see_and_use_new_robot_form
@@ -31,6 +31,9 @@ class NewTest < FeatureTest
     find_button('Submit').click
 
     assert_equal '/robots', current_path
+    within(".container") do
+      assert page.has_content?("Welcome to Robot World: A World of Robots")
+    end
   end
 
 end
